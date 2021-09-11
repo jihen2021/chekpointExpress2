@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>Document</title>
+</head>
+<body>
+  <style type="text/css">
+  .image{
+    width: 50px;
+    height: 50px;
+  }
+  h1{
+    color: #00c4ff;
+    font-style: italic;
+    margin-bottom: 30px !important;
+  }
+ 
+  </style>
+  
+    
+    <%-include('./header')%>
+   <h1> Contactez un vétérinaire</h1>
+   <!-- grid -->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+
+              <!-- carte de service  de vive voix-->
+          <div class="card border-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-header titrecard">DE VIVE VOIX</div>
+            <div class="card-body text-secondary">
+              <h5 class="card-title">
+                <img src="https://png.pngtree.com/png-vector/20190321/ourlarge/pngtree-vector-active-call-icon-png-image_854965.jpg" class="image"/>
+              </h5>
+              <p class="card-text">Un vétérinaire vous appel immédiatement</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm">
+          
+          <div class="card border-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-header titrecard">EN VISIO</div>
+            <div class="card-body text-secondary">
+              <h5 class="card-title">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuPpws0NbKsC2N1cES-G9dqRI251i62c51ng&usqp=CAU" class="image"/>
+              </h5>
+              <p class="card-text ">Dialogure avec un vétérinaire</p>
+            </div>
+          </div>
+
+
+
+
+        </div>
+        <div class="col-sm">
+          <div class="card border-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-header titrecard">EN VISIO PREMIUM</div>
+            <div class="card-body text-secondary">
+              <h5 class="card-title">
+                <img src="https://img.freepik.com/vecteurs-libre/illustration-vectorielle-rencontre-ligne-concept-abstrait-conference-telephonique-rejoindre-groupe-meetup-service-ligne-appel-video-communication-distance-reunion-informelle-metaphore-abstraite-du-reseautage-membres_335657-2920.jpg?size=338&ext=jpg" class="image"/>
+              </h5>
+              <p class="card-text">Reservez une séance de téle-conseil</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+
+     <%-include('./footer')%>
+</body>
+</html>
