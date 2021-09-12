@@ -5,7 +5,17 @@ let app=express()
 //template
 app.set('view engine','ejs')
 
-//route static
+
+//middleware
+const time=(req,res,next)=>
+{
+     req = new Date().toString()
+     console.log('is runig at '+req )
+    next()
+}
+
+app.use(time)
+//route static 
 //app.use(express.static(__dirname,'public','views','pages'))
 //route 
 
@@ -33,14 +43,6 @@ app.post('/pages/contact',(req,res)=>
 })
   // middle ware pour la gestion de tepm de req
 
-app.get('/now',(req,res,next)=>
-{
-    req.time = new Date().toString()
-    next()
 
-},(req,res)=>{
-    //return
-  res.json({'time': req.time})
-})
 
 app.listen(3000)
