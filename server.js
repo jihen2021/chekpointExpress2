@@ -1,17 +1,28 @@
 let express=require('express')
 let bodyParser = require('body-parser')
 let app=express()
-
+app.use(express.json())//body parser
 //template
 app.set('view engine','ejs')
 
 
 //middleware
+  // middle ware pour la gestion de tepm de req
+
 const time=(req,res,next)=>
 {
-     req = new Date().toString()
-     console.log('is runig at '+req )
-    next()
+    req = new Date().getDay()
+    rev= new Date().getHours()
+    if (rev<9 || rev>17 ||req===6||req===7) {
+    
+      res.send(
+
+      '<h1> The web application is only available during working :Monday to friday from 9 to 17 <h1>'
+      )
+    } 
+    else{ 
+      
+         next() }
 }
 
 app.use(time)
@@ -38,10 +49,9 @@ app.get('/ourService',(req,res)=>
 // post contact
 app.post('/pages/contact',(req,res)=>
 {
-// poster un message
-
+    res.render('pages/contact')
 })
-  // middle ware pour la gestion de tepm de req
+
 
 
 
