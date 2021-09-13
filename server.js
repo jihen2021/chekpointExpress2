@@ -6,26 +6,7 @@ app.use(express.json())//body parser
 app.set('view engine','ejs')
 
 
-//middleware
-  // middle ware pour la gestion de tepm de req
 
-const time=(req,res,next)=>
-{
-    req = new Date().getDay()
-    rev= new Date().getHours()
-    if (rev<9 || rev>17 ||req===6||req===7) {
-    
-      res.send(
-
-      '<h1> The web application is only available during working :Monday to friday from 9 to 17 <h1>'
-      )
-    } 
-    else{ 
-      
-         next() }
-}
-
-app.use(time)
 //route static 
 //app.use(express.static(__dirname,'public','views','pages'))
 //route 
@@ -35,6 +16,27 @@ app.get('/',(req,res)=>
     //res.send('salut') pas de ejs
     res.render('pages/index')
 })
+
+//middleware
+  // middle ware pour la gestion de tepm de req
+
+  const time=(req,res,next)=>
+  {
+      req = new Date().getDay()
+      rev= new Date().getHours()
+      if (rev<9 || rev>17 ||req===1||req===7) {
+      //send file path absolute
+        res.send(
+  
+        '<h1> The web application is only available during working :Monday to friday from 9 to 17 <h1>'
+        )
+      } 
+      else{ 
+        
+           next() }
+  }
+  
+  app.use(time)
 app.get('/contact',(req,res)=>
 {
     //res.send('salut') pas de ejs
